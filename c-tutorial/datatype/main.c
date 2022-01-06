@@ -28,24 +28,28 @@ int main(void) {
     
     // Char type
     //  'A' char형은 내부적으로 ASCII code 숫자 65로 표현된다
-    //  char type은 printf()에서 %c로 참조한다
+    //  문자열은 char type의 배열로 선언한다
+    //  1 글자의 char type은 printf()에서 %c로 참조한다
+    //  문자열의 char type은 printf()에서 %s로 참조한다
     //  char type은 printf()에서 %d로 참조하면, ASCII Code 숫자를 출력한다
-        // char x = 'A';
-        // printf("%c\n", x);
-        // printf("%d\n", x);
-        // char y = 65;
-        // printf("%c\n", y);
-        // int z = 65;
-        // printf("%c\n", z);
+         char x = 'A';
+         printf("%c\n", x);
+         printf("%d\n", x);
+         char y = 65;
+         printf("%c\n", y);
+         int z = 65;
+         printf("%c\n", z);
+         char a[] = "Hello";
+         printf("%s\n", a);
     
     // Int type
     //  int type은 printf()에서 %d로 참조하면, 10진수로 출력한다
     //  int type은 printf()에서 %o로 참조하면, 8진수로 출력한다
     //  int type은 printf()에서 %x로 참조하면, 16진수로 출력한다
-    int x = 100;
-    printf("10진수로 출력 : %d\n", x);
-    printf("8진수로 출력 : %o\n", x);
-    printf("16진수로 출력 : %x\n", x);
+//    int x = 100;
+//    printf("10진수로 출력 : %d\n", x);
+//    printf("8진수로 출력 : %o\n", x);
+//    printf("16진수로 출력 : %x\n", x);
     
     return 0;
 }
