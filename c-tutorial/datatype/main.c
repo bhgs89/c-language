@@ -52,27 +52,101 @@ int main(void) {
     //    printf("16진수로 출력 : %x\n", x);
     
     // short type
-    short a = 32767;
-    short a_1 = 32768;
-    short a_2 = 32778;
-    short a_3 = -1;
-    printf("%hd\n", a);
-    printf("%hd\n", a_1);
-    printf("%hd\n", a_2);
-    printf("%hd\n", a_3);
-    printf("%hu\n", a_3);
+    //    short a = 32767;
+    //    short a_1 = 32768;
+    //    short a_2 = 32778;
+    //    short a_3 = -1;
+    //    printf("%hd\n", a);
+    //    printf("%hd\n", a_1);
+    //    printf("%hd\n", a_2);
+    //    printf("%hd\n", a_3);
+    //    printf("%hu\n", a_3);
+    //
+    //    printf("--------------\n");
+    //
+    //    unsigned short b = 65535;
+    //    unsigned short b_1 = 65536;
+    //    unsigned short b_2 = 65546;
+    //    unsigned short b_3 = -1;
+    //    printf("%hu\n", b);
+    //    printf("%hu\n", b_1);
+    //    printf("%hu\n", b_2);
+    //    printf("%hu\n", b_3);
+    //    printf("%hd\n", b_3);
     
-    printf("--------------\n");
+    // 실수형 타입
+    // sizeof()함수는 unsigned long 형태의 값을 return한다
     
-    unsigned short b = 65535;
-    unsigned short b_1 = 65536;
-    unsigned short b_2 = 65546;
-    unsigned short b_3 = -1;
-    printf("%hu\n", b);
-    printf("%hu\n", b_1);
-    printf("%hu\n", b_2);
-    printf("%hu\n", b_3);
-    printf("%hd\n", b_3);
+    // float type
+    float a = 0.0001;
+    printf("a는 %f\n", a);
+    printf("size는 %lu\n", sizeof(a));
+    float b = 0.0001f;
+    printf("b는 %f\n", b);
+    printf("size는 %lu\n", sizeof(b));
     
+    // double type
+    double c = 0.00000000001;
+    printf("c는 %f\n", c);
+    printf("size는 %lu\n", sizeof(c));
+    double d = 0.00000000001f;
+    printf("d는 %f\n", d);
+    printf("size는 %lu\n", sizeof(d));
+    
+    // 실수 type 확인
+    printf("실수 0.1은 %lu bytes이다\n", sizeof(0.1f));
+    printf("실수 0.1은 %lu bytes이다\n", sizeof(0.1));
+    
+    // 실수 유효자릿수
+    float a1 = 3.141593f;
+    float a2 = 3.141592654589793f;
+    printf("a1는 %f\n", a1);
+    printf("a1는 %f\n", a2);
+    double b1 = 3.14159265458979;
+    printf("b1는 %f\n", b1);
+    printf("b1는 %lf\n", b1);
+    
+    // 정수, 실수 표현
+    printf("12의 size는 %lu이다\n", sizeof(12));
+    printf("12.의 size는 %lu이다\n", sizeof(12.));
+    
+    // 수소점 지정
+    float a3 = 3.14159f;
+    double b3 = 3.14159;
+    printf("a3는 %.2f\n", a3);
+    printf("b3는 %.2lf\n", b3);
+    
+    // float 출력
+    //    float x = 3.14159f;
+    //    float y = 3.14159;
+    //    printf("x는 %f\n", x);
+    //    printf("y는 %f\n", y);
+    //    printf("x는 %.2f\n", x);
+    //    printf("y는 %.4f\n", y);
+    //    printf("x는 %e\n", x);
+    //    printf("y는 %e\n", y);
+    //    printf("x는 %.2e\n", x);
+    //    printf("y는 %.4e\n", y);
+    //    printf("x는 %g\n", x);
+    //    printf("y는 %g\n", y);
+    //    printf("x는 %.2g\n", x);
+    //    printf("y는 %.4g\n", y);
+
+    // 지수 표기법 선언
+    float x = 1234.5678e+2f;
+    float y = 1234.5678e+2;
+    printf("x는 %f\n", x);
+    printf("y는 %f\n", y);
+    printf("x는 %.2f\n", x);
+    printf("y는 %.4f\n", y);
+    printf("x는 %e\n", x);
+    printf("y는 %e\n", y);
+    printf("x는 %.2e\n", x);
+    printf("y는 %.4e\n", y);
+    printf("x는 %g\n", x);
+    printf("y는 %g\n", y);
+    printf("x는 %.2g\n", x);
+    printf("y는 %.4g\n", y);
+
     return 0;
 }
