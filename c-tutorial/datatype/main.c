@@ -133,20 +133,27 @@ int main(void) {
     //    printf("y는 %.4g\n", y);
 
     // 지수 표기법 선언
-    float x = 1234.5678e+2f;
-    float y = 1234.5678e+2;
-    printf("x는 %f\n", x);
-    printf("y는 %f\n", y);
-    printf("x는 %.2f\n", x);
-    printf("y는 %.4f\n", y);
-    printf("x는 %e\n", x);
-    printf("y는 %e\n", y);
-    printf("x는 %.2e\n", x);
-    printf("y는 %.4e\n", y);
-    printf("x는 %g\n", x);
-    printf("y는 %g\n", y);
-    printf("x는 %.2g\n", x);
-    printf("y는 %.4g\n", y);
+    //    float x = 1234.5678e+2f;
+    //    float y = 1234.5678e+2;
+    //    float z = 1234.5678e-4f;
+    //    printf("x는 %f\n", x);
+    //    printf("y는 %f\n", y);
+    //    printf("z는 %f\n", z);
+    //    printf("x는 %.2f\n", x);
+    //    printf("y는 %.4f\n", y);
+    //    printf("z는 %.4f\n", z);
+    //    printf("x는 %e\n", x);
+    //    printf("y는 %e\n", y);
+    //    printf("z는 %e\n", z);
+    //    printf("x는 %.2e\n", x);
+    //    printf("y는 %.4e\n", y);
+    //    printf("z는 %.4e\n", z);
+    //    printf("x는 %g\n", x);
+    //    printf("y는 %g\n", y);
+    //    printf("z는 %g\n", z);
+    //    printf("x는 %.2g\n", x);
+    //    printf("y는 %.4g\n", y);
+    //    printf("z는 %.4g\n", z);
 
     return 0;
 }
