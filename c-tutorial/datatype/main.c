@@ -32,24 +32,47 @@ int main(void) {
     //  1 글자의 char type은 printf()에서 %c로 참조한다
     //  문자열의 char type은 printf()에서 %s로 참조한다
     //  char type은 printf()에서 %d로 참조하면, ASCII Code 숫자를 출력한다
-         char x = 'A';
-         printf("%c\n", x);
-         printf("%d\n", x);
-         char y = 65;
-         printf("%c\n", y);
-         int z = 65;
-         printf("%c\n", z);
-         char a[] = "Hello";
-         printf("%s\n", a);
+    //     char x = 'A';
+    //     printf("%c\n", x);
+    //     printf("%d\n", x);
+    //     char y = 65;
+    //     printf("%c\n", y);
+    //     int z = 65;
+    //     printf("%c\n", z);
+    //     char a[] = "Hello";
+    //     printf("%s\n", a);
     
     // Int type
     //  int type은 printf()에서 %d로 참조하면, 10진수로 출력한다
     //  int type은 printf()에서 %o로 참조하면, 8진수로 출력한다
     //  int type은 printf()에서 %x로 참조하면, 16진수로 출력한다
-//    int x = 100;
-//    printf("10진수로 출력 : %d\n", x);
-//    printf("8진수로 출력 : %o\n", x);
-//    printf("16진수로 출력 : %x\n", x);
+    //    int x = 100;
+    //    printf("10진수로 출력 : %d\n", x);
+    //    printf("8진수로 출력 : %o\n", x);
+    //    printf("16진수로 출력 : %x\n", x);
+    
+    // short type
+    short a = 32767;
+    short a_1 = 32768;
+    short a_2 = 32778;
+    short a_3 = -1;
+    printf("%hd\n", a);
+    printf("%hd\n", a_1);
+    printf("%hd\n", a_2);
+    printf("%hd\n", a_3);
+    printf("%hu\n", a_3);
+    
+    printf("--------------\n");
+    
+    unsigned short b = 65535;
+    unsigned short b_1 = 65536;
+    unsigned short b_2 = 65546;
+    unsigned short b_3 = -1;
+    printf("%hu\n", b);
+    printf("%hu\n", b_1);
+    printf("%hu\n", b_2);
+    printf("%hu\n", b_3);
+    printf("%hd\n", b_3);
     
     return 0;
 }
