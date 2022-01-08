@@ -189,40 +189,82 @@ int main(void) {
     // Sign bit: 0
     // 지수부 bit: 1111 1111
     // 가수부 bit: 000 0000 0000 0000 0000 0000
-    float x1 = 3.40282366921e38f;
-    printf("x1는 %.20f\n", x1);
+    //    float x1 = 3.40282366921e38f;
+    //    printf("x1는 %.20f\n", x1);
     
     // Sign bit: 1
     // 지수부 bit: 1111 1111
     // 가수부 bit: 000 0000 0000 0000 0000 0000
-    float x2 = -3.40282366921e38f;
-    printf("x2는 %.20f\n", x2);
+    //    float x2 = -3.40282366921e38f;
+    //    printf("x2는 %.20f\n", x2);
     
     // Sign bit: 0
     // 지수부 bit: 1111 1111
     // 가수부 bit: 000 0000 0000 0000 0000 0001
-    float x3 = 3.40282407486e38f;
-    printf("x3는 %.20f\n", x3);
+    //    float x3 = 3.40282407486e38f;
+    //    printf("x3는 %.20f\n", x3);
     
     // Sign bit: 1
     // 지수부 bit: 1111 1111
     // 가수부 bit: 000 0000 0000 0000 0000 0001
-    float x4 = -3.40282407486e38f;
-    printf("x4는 %.20f\n", x4);
+    //    float x4 = -3.40282407486e38f;
+    //    printf("x4는 %.20f\n", x4);
+    //
+    //    printf("-----------------\n");
+    
+    // Sign bit: 0
+    // 지수부 bit: 0000 0000
+    // 가수부 bit: 000 0000 0000 0000 0000 0000
+    //    float y1 = 1.17549435082e-38f;
+    //    printf("y1는 %.40f\n", y1);
+    
+    // Sign bit: 1
+    // 지수부 bit: 0000 0000
+    // 가수부 bit: 000 0000 0000 0000 0000 0000
+    //    float y2 = -1.17549435082e-38f;
+    //    printf("y2는 %.40f\n", y2);
+    
+    // float 소수점 6자리까지 정확하게 저장 가능
+    //    float x = 1.23456732f;
+    //    printf("%.20f", x);
+    
+    
+    //    double x = 0.0001;
+    //    printf("%lf\n", x);
+    //    printf("%le\n", x);
+    //    printf("%lg\n", x);
+    
+    // double type
+    //  printf()에서 %lf, %le, %lg로 출력
 
-    printf("-----------------\n");
+    double x = 3.1415912345;
     
-    // Sign bit: 0
-    // 지수부 bit: 0000 0000
-    // 가수부 bit: 000 0000 0000 0000 0000 0000
-    float y1 = 1.17549435082e-38f;
-    printf("y1는 %.20f\n", y1);
+    // %f 출력
+    printf("%f\n", x);
+    printf("%lf\n", x);
+    // 소수점 지정 (반올림)
+    printf("%.4lf\n", x);
+    // %e 출력
+    printf("%e\n", x);
+    printf("%le\n", x);
+    // %g 출력
+    printf("%g\n", x);
+    printf("%lg\n", x);
+
+    printf("-------------------\n");
     
-    // Sign bit: 1
-    // 지수부 bit: 0000 0000
-    // 가수부 bit: 000 0000 0000 0000 0000 0000
-    float y2 = -1.17549435082e-38f;
-    printf("y2는 %.20f\n", y2);
+    double y = 1234.5678e+2;
+    // %f 출력
+    printf("%f\n", y);
+    printf("%lf\n", y);
+    // 소수점 지정 (반올림)
+    printf("%.4f\n", y);
+    // %e 출력
+    printf("%e\n", y);
+    printf("%le\n", y);
+    // %g 출력
+    printf("%g\n", y);
+    printf("%lg\n", y);
     
     return 0;
 }
