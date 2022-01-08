@@ -154,6 +154,75 @@ int main(void) {
     //    printf("x는 %.2g\n", x);
     //    printf("y는 %.4g\n", y);
     //    printf("z는 %.4g\n", z);
+    
+    // float 오차
+    //    float a_e1 = 0.1f;
+    //    printf("%.15f\n", a_e1);
+    //
+    //    double b_e1 = 0.1;
+    //    printf("%.55lf\n", b_e1);
+    //
+    //    printf("---------------\n");
+    //    float x = 0.0f;
+    //    float y = 0.1f;
+    //    printf("y는 %.15f\n", y);
+    //    for (int i = 0; i < 10; i++) {
+    //        x = x + y;
+    //        printf("x는 %.15f\n", x);
+    //    }
+    //    if (x == 1.0f)
+    //        printf("true\n");
+    //    else
+    //        printf("false\n");
+    
+    // float 범위
+    //    float x1 = -3.40282346639e38f;
+    //    float x2 = -3.40283346639e38f;
+    //    printf("x1는 %.20f\n", x1);
+    //    printf("x2는 %.20f\n", x2);
+    //
+    //    float y1 = 3.40282346639e38f;
+    //    float y2 = 3.40283346639e38f;
+    //    printf("y1는 %.20f\n", y1);
+    //    printf("y2는 %.20f\n", y2);
+    
+    // Sign bit: 0
+    // 지수부 bit: 1111 1111
+    // 가수부 bit: 000 0000 0000 0000 0000 0000
+    float x1 = 3.40282366921e38f;
+    printf("x1는 %.20f\n", x1);
+    
+    // Sign bit: 1
+    // 지수부 bit: 1111 1111
+    // 가수부 bit: 000 0000 0000 0000 0000 0000
+    float x2 = -3.40282366921e38f;
+    printf("x2는 %.20f\n", x2);
+    
+    // Sign bit: 0
+    // 지수부 bit: 1111 1111
+    // 가수부 bit: 000 0000 0000 0000 0000 0001
+    float x3 = 3.40282407486e38f;
+    printf("x3는 %.20f\n", x3);
+    
+    // Sign bit: 1
+    // 지수부 bit: 1111 1111
+    // 가수부 bit: 000 0000 0000 0000 0000 0001
+    float x4 = -3.40282407486e38f;
+    printf("x4는 %.20f\n", x4);
 
+    printf("-----------------\n");
+    
+    // Sign bit: 0
+    // 지수부 bit: 0000 0000
+    // 가수부 bit: 000 0000 0000 0000 0000 0000
+    float y1 = 1.17549435082e-38f;
+    printf("y1는 %.20f\n", y1);
+    
+    // Sign bit: 1
+    // 지수부 bit: 0000 0000
+    // 가수부 bit: 000 0000 0000 0000 0000 0000
+    float y2 = -1.17549435082e-38f;
+    printf("y2는 %.20f\n", y2);
+    
     return 0;
 }
