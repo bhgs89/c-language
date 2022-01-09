@@ -1,46 +1,34 @@
 #include <stdio.h>
+#include <math.h>
 
 int main(int argc, const char * argv[]) {
+//    double x1 = -1.797693134e308;
+//    double x2 = x1 - 0.00001e308;
+//    printf("x1는 %.20lg\n", x1);
+//    printf("x2는 %.20lf\n", x2);
+//
+//    double y1 = 1.797693134e308;
+//    double y2 = x1 - 0.00001e308;
+//    printf("y1는 %.20lg\n", y1);
+//    printf("y2는 %.20lf\n", y2);
+//
+//    double a = 1 / pow(2, 52);
+//    printf("a는 %.52lg\n", a);
     
-    // infinite
-    // Sign bit: 0
-    // 지수부 bit: 111 1111 1111
-    // 가수부 bit: 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
-    double x1 = 3.40282366921e38f;
-    printf("x1는 %.20f\n", x1);
-    
-    // Sign bit: 1
-    // 지수부 bit: 1111 1111
-    // 가수부 bit: 000 0000 0000 0000 0000 0000
-    float x2 = -3.40282366921e38f;
-    printf("x2는 %.20f\n", x2);
-    
-    // Sign bit: 0
-    // 지수부 bit: 1111 1111
-    // 가수부 bit: 000 0000 0000 0000 0000 0001
-    float x3 = 3.40282407486e38f;
-    printf("x3는 %.20f\n", x3);
-    
-    // Sign bit: 1
-    // 지수부 bit: 1111 1111
-    // 가수부 bit: 000 0000 0000 0000 0000 0001
-    float x4 = -3.40282407486e38f;
-    printf("x4는 %.20f\n", x4);
+    double x = 0.0;
+    double y = 0.1;
+    printf("y는 %.52lf\n", y);
 
-    printf("-----------------\n");
-    
-    //// Denormalized ////
-    // Sign bit: 0
-    // 지수부 bit: 0000 0000
-    // 가수부 bit: 000 0000 0000 0000 0000 0000
-    float y1 = 1.17549435082e-38f;
-    printf("y1는 %.20f\n", y1);
-    
-    // Sign bit: 1
-    // 지수부 bit: 0000 0000
-    // 가수부 bit: 000 0000 0000 0000 0000 0000
-    float y2 = -1.17549435082e-38f;
-    printf("y2는 %.20f\n", y2);
+    for (int i = 0; i < 10; i++) {
+        x = x + y;
+        printf("x는 %.52lf\n", x);
+    }
+
+    if (x == 1.0) {
+        printf("true\n");
+    } else {
+        printf("false\n");
+    }
     
     return 0;
 }

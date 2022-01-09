@@ -159,7 +159,7 @@ double float_calculator(bool printer, int sign_bit, int exp_bit[], int real_bit[
         if (sign_bit == 1) {
             printf("실제 값: -(%f)(2 ^ %d)= -%.23g\n", float_real_number, (float_exp_number - 127), float_result);
         } else {
-            printf("실제 값: %.23f\n", float_result);
+            printf("실제 값: %.23g\n", float_result);
         }
     }
     
@@ -176,31 +176,127 @@ double float_calculator(bool printer, int sign_bit, int exp_bit[], int real_bit[
     return float_result;
 }
 
+// Double type bit 계산기
+double double_calculator(bool printer, int sign_bit, int exp_bit[], int real_bit[], int exp_size, int real_size) {
+    if (printer) {
+        printf("=====================================\n");
+        printf("Double Bits Calculator\n");
+        printf("sign bit: %d\n", sign_bit);
+    }
+    
+    // 지수부 계산
+    if (printer) {
+        printf("지수부 bits: ");
+    }
+    int double_exp_size = exp_size / 4;
+    int double_exp_number = 0;
+    for (int i = 0; i < double_exp_size; i++) {
+        if (printer) {
+            printf("%d", exp_bit[i]);
+        }
+        if (exp_bit[i] > 0) {
+            double_exp_number += pow(2, double_exp_size - (i + 1));
+        }
+    }
+    
+    if (printer) {
+        printf("\n");
+    }
+    
+    // 가수부 계산
+    if (printer) {
+        printf("가수부 bits: ");
+    }
+    int double_real_size = real_size / 4;
+    double double_real_number = 1.0;
+    for (int i = 1; i <= double_real_size; i++) {
+        if (printer) {
+            printf("%d", real_bit[i - 1]);
+        }
+        if (real_bit[i - 1] > 0) {
+            double_real_number += pow(2, -i);
+        }
+    }
+    
+    if (printer) {
+        printf("\n");
+        printf("-------------------\n");
+    }
+        
+    if (printer) {
+        if (sign_bit == 1) {
+            printf("sign: -\n");
+        } else {
+            printf("sign: +\n");
+        }
+        printf("지수부 값(bias 기준): %d\n", double_exp_number - 1023);
+        printf("가수부 값: %.52lg\n", double_real_number);
+        printf("-------------------\n");
+    }
+    
+    double double_result = 0.0;
+    if (double_exp_number == 0 && double_real_number == 0) {
+        if (printer) {
+            printf("실제 값: 0 (Denormalized)\n");
+        }
+    } else {
+        double_result = double_real_number * pow(2, (double_exp_number - 1023));
+        if (sign_bit == 1) {
+            printf("실제 값: -(%.52lf)(2 ^ %d)= -%.52lg\n", double_real_number, (double_exp_number - 1023), double_result);
+        } else {
+            printf("실제 값: %.52lg\n", double_result);
+        }
+    }
+    
+    if (sign_bit == 1) {
+        double_result *= -1;
+    }
+    
+    if (printer) {
+        printf("=====================================\n");
+        printf("\n");
+        printf("\n");
+    }
+    
+    return double_result;
+}
+
 int main(void) {
     // float bit 계산기
-    int float_sign_bit = 1;
-//    int float_exp_bits[] = {1,1,1,1, 1,1,1,0};
+    int float_sign_bit = 0;
+    int float_exp_bits[] = {1,1,1,1, 1,1,1,0};
 //    int float_exp_bits[] = {0,0,0,0, 0,0,0,0};
-    int float_exp_bits[] = {0,1,1,1, 1,0,1,1};
-//    int float_real_bits[] = {1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1};
+//    int float_exp_bits[] = {0,1,1,1, 1,0,1,1};
+    int float_real_bits[] = {1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1};
 //    int float_real_bits[] = {0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0};
-    int float_real_bits[] = {1,0,0, 1,1,0,0, 1,1,0,0, 1,1,0,0, 1,1,0,0, 1,1,0,1};
-    double float_result = float_calculator(true, float_sign_bit, float_exp_bits, float_real_bits, sizeof(float_exp_bits), sizeof(float_real_bits));
+//    int float_real_bits[] = {1,0,0, 1,1,0,0, 1,1,0,0, 1,1,0,0, 1,1,0,0, 1,1,0,1};
+//    double float_result = float_calculator(true, float_sign_bit, float_exp_bits, float_real_bits, sizeof(float_exp_bits), sizeof(float_real_bits));
+    
+    
     
     // Double bit 계산기
-    int double_bits_calculator = 0;
-    int double_sign_bit = 1;
-    int double_exp_bits[] = {0,0,0, 0,0,0,0, 0,0,0,0};
-    int double_real_bits[] = {0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0};
+    int double_sign_bit = 0;
+//    int double_exp_bits[] = {0,0,0, 0,0,0,0, 0,0,0,0};
+    int double_exp_bits[] = {0,1,1, 1,1,1,1, 1,0,1,1};
+//    int double_real_bits[] = {0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0};
+//    int double_real_bits[] = {1﻿};
+    int double_real_bits[] = {1,0,0,1, 1,0,0,1, 1,0,0,1, 1,0,0,1, 1,0,0,1, 1,0,0,1, 1,0,0,1, 1,0,0,1, 1,0,0,1, 1,0,0,1, 1,0,0,1, 1,0,0,1 ,1,0,1,0};
+    double double_result = double_calculator(true, double_sign_bit, double_exp_bits, double_real_bits, sizeof(double_exp_bits), sizeof(double_real_bits));
+    
+    
     
     // 지수 계산기
     int exp_base = 2;
     int exp_exp = -2;
     double exp_cal = exp_calculator(true, exp_base, exp_exp);
     
+    
+    
     // 2진수 -> 10진수 계산기
     // Positive
-    int bi_pos[] = {1,1,1,1, 1,1,1,0};
+    int bi_pos[] = {0,1,1, 1,1,1,1, 1,0,1,1};
+//    int bi_pos[] = {1,0,0, 0,0,0,0, 0,0,0,1};
+//    int bi_pos[] = {0,1,1,1, 1,1,1,1};
 //    int bi_pos[] = {0,0,0,0, 0,0,0,0};
 //    int bi_pos[] = {1,0,1,0};
 //    int bi_pos[] = {1};
@@ -211,65 +307,6 @@ int main(void) {
 //    int bi_neg[] = {0,0,1,1,1};
     int bi_neg[] = {};
     double binary_cal = binary_to_decimal_calculator(true, bi_pos, bi_neg, sizeof(bi_pos), sizeof(bi_neg));
-    
-    
-    
-    
-    // Double type bit 계산기
-        if (double_bits_calculator == 1) {
-            printf("=====================================\n");
-            printf("Double Bits Calculator\n");
-            printf("sign bit: %d\n", double_sign_bit);
-            
-            // 지수부 계산
-            printf("지수부 bits: ");
-            int double_exp_size = sizeof(double_exp_bits) / 4;
-            int double_exp_number = 0;
-            for (int i = 0; i < double_exp_size; i++) {
-                printf("%d", double_exp_bits[i]);
-                if (double_exp_bits[i] > 0) {
-                    double_exp_number += pow(2, i);
-                }
-            }
-            printf("\n");
-            
-            // 가수부 계산
-            printf("가수부 bits: ");
-            int double_real_size = sizeof(double_real_bits) / 4;
-            double double_real_number = 1.0;
-            for (int i = 0; i < double_real_size; i++) {
-                printf("%d", double_real_bits[i]);
-                if (double_real_bits[i] > 0) {
-                    double_real_number += pow(2, -i);
-                }
-            }
-            printf("\n");
-            printf("-------------------\n");
-                    
-            // 부호부 계산
-            if (double_sign_bit == 1) {
-                printf("sign: -\n");
-            } else {
-                printf("sign: +\n");
-            }
-            printf("지수부 값: %d\n", double_exp_number);
-            printf("가수부 값: %.52lg\n", double_real_number);
-            printf("-------------------\n");
-
-            if (double_exp_number == 0 && double_real_number == 0) {
-                printf("실제 값: 0 (Denormalized)\n");
-            } else {
-                double double_result = double_real_number * pow(2, double_exp_number);
-                if (double_sign_bit == 1) {
-                    printf("실제 값: -%.52lf\n", double_result);
-                } else {
-                    printf("실제 값: %.52lf\n", double_result);
-                }
-            }
-            printf("=====================================\n");
-            printf("\n");
-            printf("\n");
-        }
     
     return 0;
 }
