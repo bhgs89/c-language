@@ -30,5 +30,8 @@ int main(int argc, const char * argv[]) {
         printf("false\n");
     }
     
+    long double a = 0.1l;
+    printf("size는 %d\n", sizeof(a));
+    
     return 0;
 }
