@@ -9,32 +9,69 @@
 
 int main(void) {
     // 절대값 프로그램
-        // int x = -150;
-        // if (x < 0) {
-        //   x = -x;
-        // }
-        // printf("x의 절대값은 %d입니다.\n", x);
+    // int x = -150;
+    // if (x < 0) {
+    //   x = -x;
+    // }
+    // printf("x의 절대값은 %d입니다.\n", x);
     
     // 학생 점수
-        // int score = 85;
-        // if (score >= 90) {
-        //     printf("당신의 학점은 A입니다.\n");
-        // } else if (score >= 80) {
-        //     printf("당신의 학점은 B입니다.\n");
-        // } else if (score >= 70) {
-        //     printf("당신의 학점은 C입니다.\n");
-        // } else {
-        //     printf("당신의 학점은 F입니다.\n");
-        // }
+    // int score = 85;
+    // if (score >= 90) {
+    //     printf("당신의 학점은 A입니다.\n");
+    // } else if (score >= 80) {
+    //     printf("당신의 학점은 B입니다.\n");
+    // } else if (score >= 70) {
+    //     printf("당신의 학점은 C입니다.\n");
+    // } else {
+    //     printf("당신의 학점은 F입니다.\n");
+    // }
     
     // 윤년 판독 프로그램
     //  4년 마다, 그렇지만 100년 단위일 때는 윤년에 해당하지 않도록
     //  400년 단위일 때는 어떤 상황이든간에 윤년으로 설정
-    int year = 2022;
-    if (((year % 4 == 0) && (year % 100 != 0)) || year % 400 == 0) {
-        printf("%d년은 윤년입니다.\n", year);
-    } else {
-        printf("%d년은 윤년이 아닙니다.\n", year);
+    //    int year = 2022;
+    //    if (((year % 4 == 0) && (year % 100 != 0)) || year % 400 == 0) {
+    //        printf("%d년은 윤년입니다.\n", year);
+    //    } else {
+    //        printf("%d년은 윤년이 아닙니다.\n", year);
+    //    }
+    
+    int x = 90;
+    switch (x) {
+        case 90:
+            printf("점수는 A 입니다.\n");
+            break;
+        case 80:
+            printf("점수는 B 입니다.\n");
+            break;
+        case 70:
+            printf("점수는 C 입니다.\n");
+            break;
+        case 60:
+            printf("점수는 D 입니다.\n");
+            break;
+        default:
+            printf("점수는 F 입니다.\n");
+    }
+    printf("\n");
+    printf("\n");
+    
+    int y = 90;
+    switch (y) {
+        case 90:
+            printf("점수는 A 입니다.\n");
+        case 80:
+            printf("점수는 B 입니다.\n");
+            break;
+        case 70:
+            printf("점수는 C 입니다.\n");
+            break;
+        case 60:
+            printf("점수는 D 입니다.\n");
+            break;
+        default:
+            printf("점수는 F 입니다.\n");
     }
     
     return 0;
