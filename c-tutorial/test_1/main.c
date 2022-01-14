@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
+    // 임의의 값 넣기 배열에
     char test[10];
 
     printf("Enter string: ");
