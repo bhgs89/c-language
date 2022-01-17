@@ -57,11 +57,24 @@ int main(int argc, const char * argv[]) {
     //    printf("전체 정수의 값은 %d입니다.\n", sum);
     
     // 특정한 단의 구구단을 출력하는 프로그램
-    int x, i;
-    printf("정수를 입력하세요 : ");
-    scanf("%d", &x);
-    for (i = 1; i <= 9; i++) {
-        printf("%d X %d = %d\n", x, i, x * i);
-    }
+    //    int x, i;
+    //    printf("정수를 입력하세요 : ");
+    //    scanf("%d", &x);
+    //    for (i = 1; i <= 9; i++) {
+    //        printf("%d X %d = %d\n", x, i, x * i);
+    //    }
+    
+//    char a,b;
+//    printf("Enter 2 values: ");
+//    scanf("%c %c", &a, &b);
+//    printf("a는 %c, b는 %c\n", a, b);
+    
+    char a,b;
+    printf("Enter first value: ");
+    scanf("%c", &a);
+    getchar();
+    printf("Enter second value: ");
+    scanf("%c", &b);
+    printf("a는 %c, b는 %c\n", a, b);
     return 0;
 }
