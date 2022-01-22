@@ -31,12 +31,20 @@ int main(int argc, const char * argv[]) {
     //    printf("b는 %c\n", b);
     //    printf("b는 %d\n", b);
     
-    char a = '0';
-    if ((int)a >= 48 && (int)a <= 57) {
-        printf("yes");
-    } else {
-        printf("no");
-    }
+    //    char a = '0';
+    //    if ((int)a >= 48 && (int)a <= 57) {
+    //        printf("yes");
+    //    } else {
+    //        printf("no");
+    //    }
     
+    int a = 157;
+    int b = -157;
+    
+    printf("%d\n", a / 60);
+    printf("%d\n", a % 60);
+    
+    printf("%d\n", b / 60);
+    printf("%d\n", b % 60);
     return 0;
 }
